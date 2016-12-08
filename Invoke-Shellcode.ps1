@@ -387,7 +387,7 @@ http://www.exploit-monday.com
             Throw "Unable to allocate shellcode memory in PID: $ProcessID"
         }
         
-        Write-Verbose "Shellcode memory reserved at 0x$($RemoteMemAddr.ToString("X$([IntPtr]::Size*2)"))"
+        Write-Verbose "Shellcode memory reserved at 0x$($RemoteMemAddr.ToString('X$([IntPtr]::Size*2)'))"
 
         # Copy shellcode into the previously allocated memory
         $WriteProcessMemory.Invoke($hProcess, $RemoteMemAddr, $Shellcode, $Shellcode.Length, [Ref] 0) | Out-Null
