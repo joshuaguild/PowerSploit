@@ -418,7 +418,7 @@ http://www.exploit-monday.com
             Throw "Unable to allocate thread call stub memory in PID: $ProcessID"
         }
         
-        Write-Verbose 'Thread call stub memory reserved at 0x$($RemoteStubAddr.ToString('X$([IntPtr]::Size*2)'))'
+        #Write-Verbose 'Thread call stub memory reserved at 0x$($RemoteStubAddr.ToString('X$([IntPtr]::Size*2)'))'
 
         # Write 32-bit assembly stub to remote process memory space
         $WriteProcessMemory.Invoke($hProcess, $RemoteStubAddr, $CallStub, $CallStub.Length, [Ref] 0) | Out-Null
