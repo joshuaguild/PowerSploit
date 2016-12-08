@@ -496,7 +496,7 @@ http://www.exploit-monday.com
             Throw "Unable to allocate thread call stub."
         }
         
-        Write-Verbose "Thread call stub memory reserved at 0x$($CallStubAddress.ToString("X$([IntPtr]::Size*2)"))"
+        Write-Verbose "Thread call stub memory reserved at 0x$($CallStubAddress.ToString('X$([IntPtr]::Size*2)'))"
 
         # Copy call stub to RWX buffer
         [System.Runtime.InteropServices.Marshal]::Copy($CallStub, 0, $CallStubAddress, $CallStub.Length)
