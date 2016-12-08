@@ -551,8 +551,8 @@ http://www.exploit-monday.com
 
             $Response = $True
         
-            if ( $Force -or ( $Response = $psCmdlet.ShouldContinue( 'Do you want to launch the payload from x86 Powershell?',
-                   'Attempt to execute 32-bit shellcode from 64-bit Powershell. Note: This process takes about one minute. Be patient! You will also see some artifacts of the script loading in the other process.' ) ) ) { }
+            if ( $Force ) #-or ( $Response = $psCmdlet.ShouldContinue( 'Do you want to launch the payload from x86 Powershell?',
+                   #'Attempt to execute 32-bit shellcode from 64-bit Powershell. Note: This process takes about one minute. Be patient! You will also see some artifacts of the script loading in the other process.' ) ) ) { }
         
             if ( !$Response )
             {
