@@ -293,7 +293,7 @@ http://www.exploit-monday.com
         function Local:ConvertTo-LittleEndian ([IntPtr] $Address)
         {
             $LittleEndianByteArray = New-Object Byte[](0)
-            $Address.ToString("X$($IntSizePtr*2)") -split '([A-F0-9]{2})' | ForEach-Object { if ($_) { $LittleEndianByteArray += [Byte] ('0x{0}' -f $_) } }
+            $Address.ToString('X$($IntSizePtr*2)') -split '([A-F0-9]{2})' | ForEach-Object { if ($_) { $LittleEndianByteArray += [Byte] ('0x{0}' -f $_) } }
             [System.Array]::Reverse($LittleEndianByteArray)
             
             Write-Output $LittleEndianByteArray
